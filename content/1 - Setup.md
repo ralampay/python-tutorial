@@ -62,8 +62,76 @@ python --version
 
 ## Python Environment Setup
 
-In practice, we use a Python environment per project. Given a project name `project`, we first have to establish a virtual environment using the `venv` module available in Python 3. The succeeding steps will now install
+In practice, we use a Python environment per project. Given a project name `project`, we first have to establish a virtual environment using the `venv` module available in Python 3. The succeeding steps will now be executed with your project's root directory.
 
 ### Creating an Environment
 
-Creating an environment involves invoking `venv` as a module (more on this later).
+1. Creating an environment involves invoking `venv` to create a folder representing the Python environment which in itself includes the `python` executable. To create an environment:
+
+```bash
+python -m venv env
+```
+
+2. We then activate the environment by running a script found within the directory `env`:
+
+#### Windows (CMD)
+
+```
+.\env\Scripts\Activate.bat
+```
+
+#### Windows (Powershell)
+
+```
+.\env\Scripts\Activate.ps1
+```
+
+#### Linux / Mac OS X
+
+```bash
+source env/bin/activate
+```
+
+This will create a prefix `(env)` in your command prompt to indicate that you are using the current environment.
+
+### Installing Libraries
+
+Installing libraries / packages / dependencies in Python involves the `pip` command. Make sure you are in your project's environment before running the `pip install` command in order to keep all dependencies within the environment. To verify that `pip` is callable:
+
+```bash
+pip --version
+```
+
+The syntax for installaing a package is as follows:
+
+```bash
+pip install [package-name]
+```
+
+You may also install multiple packages at a time:
+
+```bash
+pip install [package-1] [package-2] [package-3]
+```
+
+#### Example Set of Packages for Data Science
+
+```bash
+pip install pandas jupyter numpy scikit-learn
+```
+
+## Setting Up Jupyter Notebook
+
+[Jupyter Notebook](https://jupyter.org/) is a convenient way to prototype your Python code and test things out via a web interface. This is done by first running a Jupyter server and accessing it via a browser. Make sure you have jupyter installed by running the following:
+
+```bash
+pip install jupyter
+```
+
+To start your Jupyter Notebook server, run the following:
+
+```bash
+jupyeter notebook .
+```
+
+This will start an instance of the server on port `8000` by default. You can then access it by visiting `http://localhost:8000` from your browser.
