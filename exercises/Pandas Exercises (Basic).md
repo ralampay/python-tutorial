@@ -30,7 +30,7 @@ ProductID,ProductName,QualityScore,InspectionDate
 
 2. Use concat() to combine the two datasets into one DataFrame
 
-3. Use merge() to join the two datasets on ProductID. Perform an outer join.
+3. Use merge() to join the two datasets on ProductID.
 
 4. Create a new column called `ProductionQuality` based on the `QualityScore`. Use a custom function to classify scores:
 
@@ -68,7 +68,7 @@ MachineID,MachineName,DowntimeHours,IssueDate
 
 2. Use concat() to combine the two datasets into one DataFrame
 
-3. Use merge() to join the two datasets on MachineID. Perform an outer join.
+3. Use merge() to join the two datasets on MachineID.
 
 4. Create a new column called EfficiencyScore based on the HoursOperated and DowntimeHours. Use the formula:
 
